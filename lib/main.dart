@@ -7,7 +7,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -30,13 +29,11 @@ class CalculatorScreen extends StatefulWidget {
 }
 
 class _CalculatorScreenState extends State<CalculatorScreen> {
-  // manages each operation section
   int sum = 0;
   int difference = 0;
   int product = 0;
   double quotient = 0.0;
 
-  // either use a TextEditingController for each input field to get the value
   TextEditingController add1Controller = TextEditingController();
   TextEditingController add2Controller = TextEditingController();
   TextEditingController minus1Controller = TextEditingController();
@@ -67,7 +64,6 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                       controller: add1Controller,
                       decoration:
                           const InputDecoration(labelText: "First Number"),
-                      // update the firstAddNum state
                       keyboardType: TextInputType.number,
                     ),
                   ),
@@ -83,7 +79,6 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                   const SizedBox(width: 10),
                   Text('= $sum'),
 
-                  // 3.a Add an IconButton here
                   IconButton(
                     icon: const Icon(Icons.add),
                     onPressed: () {
@@ -95,7 +90,6 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                     },
                   ),
 
-                  // 3.b Add a button here
                   TextButton(
                     onPressed: () {
                       setState(() {
@@ -108,7 +102,6 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                   ),
                 ],
               ),
-              // 3.c - Add the other operations
               const Text('Subtraction', style: TextStyle(fontWeight: FontWeight.bold),),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
